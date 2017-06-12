@@ -20,9 +20,8 @@ class Employee {
   }
 
   static parseFromFilePath (path) {
-    const reader = fs.readFileSync(path)
-    let emp = buffer2json(reader)
-    return new this(emp.name, emp.title, emp.salary)
+    const reader = buffer2json(fs.readFileSync(path))
+    return new this(reader.name, reader.title, reader.salary)
   }
 }
 
