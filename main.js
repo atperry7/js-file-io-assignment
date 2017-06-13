@@ -12,8 +12,5 @@ const employee =
 
 employee.then(e => console.log(`is Employee? ${e instanceof Employee}`))
 employee.then(e => console.log(`parsed: ${util.inspect(e)}`))
-
-// employee.promote('chief petty grunt', 10)
-
 employee.then(e => { e.promote('chief petty grunt', 10) })
 employee.then(e => console.log(`after promotion: ${util.inspect(e)}`))
