@@ -10,9 +10,10 @@ const employee =
       path.resolve(__dirname, 'employee.json')
     )
 
-console.log(`is Employee? ${employee instanceof Employee}`)
-console.log(`parsed: ${util.inspect(employee)}`)
+employee.then(e => console.log(`is Employee? ${e instanceof Employee}`))
+employee.then(e => console.log(`parsed: ${util.inspect(e)}`))
 
-employee.promote('chief petty grunt', 10)
+// employee.promote('chief petty grunt', 10)
 
-console.log(`after promotion: ${util.inspect(employee)}`)
+employee.then(e => { e.promote('chief petty grunt', 10) })
+employee.then(e => console.log(`after promotion: ${util.inspect(e)}`))
